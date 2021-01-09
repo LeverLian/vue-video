@@ -15,7 +15,9 @@
                 <div class="swiper-button-next" slot="button-next"></div>
             </Swiper>
         </div>
-        <div class="home-body"></div>
+        <div class="home-body">
+            <SampleReels />
+        </div>
         <div class="home-foot"></div>
     </div>
 </template>
@@ -23,6 +25,7 @@
 <script>
 
     import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay, Navigation ,EffectFade,EffectCoverflow} from 'swiper/core'
+    import SampleReels from './SampleReels.vue'
     import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
     import 'swiper/swiper-bundle.min.css'
     
@@ -33,6 +36,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        SampleReels
     },
     data() {
         return {
@@ -107,8 +111,9 @@ export default {
 .home{
     width: 100%;
     height: 100%;
+    position: relative;
     .home-header{
-        width: 80%;
+        width: 70%;
         height: 30%;
         background: rgba($color: #000, $alpha: 0.9);
         margin: auto;
@@ -128,9 +133,14 @@ export default {
         }
     }
     .home-body{
-        height: 60%;
-        width: 100%;
-        background: #ccc;
+        height: 70%;
+        width: 80%;
+        position: absolute;
+        top: 28%;   
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: -1;
+        background: rgba(#dcd , 0.2);
     }
     .home-foot{
         width: 100%;
